@@ -810,6 +810,7 @@ function InputFn<
 
         // Rollback to original state
         input.value = currentValue
+        if (typeof input.setSelectionRange !== 'function') return
         if (selectionDirection !== null) {
           input.setSelectionRange(selectionStart, selectionEnd, selectionDirection)
         } else {
